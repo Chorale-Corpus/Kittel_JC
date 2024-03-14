@@ -1,2 +1,2 @@
 # Kittel_JC
-Chorales by J. C. Kittel
+Chorales by J. C. Kittel.
