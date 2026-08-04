@@ -1,6 +1,5 @@
 ![Version](https://img.shields.io/github/v/release/Chorale-Corpus/Kittel_JC?display_name=tag)
-<!-- Zenodo DOI badge: insert after the first archived release, e.g.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
+[![DOI](https://zenodo.org/badge/692076365.svg)](https://doi.org/10.5281/zenodo.21797367)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Chorale-Corpus/Kittel_JC)
 ![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf)
 
