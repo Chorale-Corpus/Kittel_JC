@@ -1,59 +1,84 @@
-# Kittel_JC
-Chorales by J. C. Kittel.
+![Version](https://img.shields.io/github/v/release/Chorale-Corpus/Kittel_JC?display_name=tag)
+<!-- Zenodo DOI badge: insert after the first archived release, e.g.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
+![GitHub repo size](https://img.shields.io/github/repo-size/Chorale-Corpus/Kittel_JC)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf)
+
+
+This is a README file for a data repository originating from the [Chorale Corpus initiative](https://github.com/Chorale-Corpus), a multi-institutional effort to bring together a wide collection of digital chorale transcriptions for musicians and researchers. This repository is a sub-corpus of the meta-corpus [Chorale-Corpus/data](https://github.com/Chorale-Corpus/data) ([DOI 10.5281/zenodo.17229783](https://doi.org/10.5281/zenodo.17229783)).
+
+When you use (parts of) this dataset in your work, please read and cite the accompanying data report:
+
+_Gerhardt, K., Hentschel, J., Phan, V. D., Kirsch, M., Kirsch, K., & Gotham, M. R. H. (2026). Beyond Ba(t)ch: A Multimodal Meta-Corpus of Digital Chorale Transcriptions and Related Data. Transactions of the International Society for Music Information Retrieval, 9(1), 440–455. https://doi.org/10.5334/tismir.226_
+
+# Johann Christian Kittel – 'Vierstimmige Choräle' and '24 Choräle mit acht verschiedenen Bässen' (2x chorale corpus)
+
+This corpus combines two collections by Johann Christian Kittel (1732–1809): the _Vierstimmige Choräle_ (1803, folder `1803_VierstimmigeChoräle`) and the _24 Choräle mit acht verschiedenen Bässen über eine Melodie_ (folder `MultibassChorales`).
+
+## Getting the data
+
+* download the repository as a [ZIP file](https://github.com/Chorale-Corpus/Kittel_JC/archive/refs/heads/main.zip)
+* download a [Frictionless Datapackage](https://specs.frictionlessdata.io/data-package/) that includes concatenations of the TSV files in the folders `measures`, `notes`, and `chords`, and a JSON descriptor:
+  * [kittel_jc.zip](https://github.com/Chorale-Corpus/Kittel_JC/releases/latest/download/kittel_jc.zip)
+  * [kittel_jc.datapackage.json](https://github.com/Chorale-Corpus/Kittel_JC/releases/latest/download/kittel_jc.datapackage.json)
+* clone the repo: `git clone https://github.com/Chorale-Corpus/Kittel_JC.git`
 
 ## File formats
 
-Information related to one and the same chorale is represented in multiple variants and formats.
-Each comes with its own advantages and disadvantages and users should make informed choices.
-Filenames function as IDs in this context in the sense that files representing (information from)
-the same chorale share the same filename prefix.
+Information related to one and the same chorale is represented in multiple variants and formats. Each comes with its own advantages and disadvantages and users should make informed choices. Filenames function as IDs in this context in the sense that files representing (information from) the same chorale share the same filename prefix.
 
 ### Authoritative file format: MSCX
 
-At the moment, only one file format in this dataset can be trusted to contain the full amount of 
-information to the highest degree of accuracy: the uncompressed MuseScore files ending on 
-`.mscx` which can be opened with MuseScore 3 or 4.
-To date, we allow modification of these files using 
-[MuseScore version 3.6.2](https://github.com/musescore/MuseScore/releases/tag/v3.6.2) exclusively.
-However, we use the latest version of MuseScore 4 
-(v4.4.4 at the time of writing this in February 2025) to convert these files to MEI and musicXML.
-Apart from these format, the information from the MuseScore files is accessible by means of 
-tabular files in TSV format, 3 per chorale: `*.notes.tsv`, `*.measures.tsv`, and `*.chords.tsv`
-(although the naming of the last is misleading as it contains mainly markup, lyrics, bass figures, etc.).
+At the moment, only one file format in this dataset can be trusted to contain the full amount of information to the highest degree of accuracy: the uncompressed MuseScore files ending on `.mscx` which can be opened with MuseScore 3 or 4. To date, we allow modification of these files using [MuseScore version 3.6.2](https://github.com/musescore/MuseScore/releases/tag/v3.6.2) exclusively. However, we use the latest version of MuseScore 4 (v4.4.4 at the time of writing this in February 2025) to convert these files to MEI and musicXML. Apart from these format, the information from the MuseScore files is accessible by means of tabular files in TSV format, 3 per chorale: `*.notes.tsv`, `*.measures.tsv`, and `*.chords.tsv` (although the naming of the last is misleading as it contains mainly markup, lyrics, bass figures, etc.).
 
-The latest version of the Python library `ms3` is used to batch convert the MuseScore files
-to other formats (`ms3 convert`) and to extract score information to TSV files (`ms3 extract`).
+The latest version of the Python library `ms3` is used to batch convert the MuseScore files to other formats (`ms3 convert`) and to extract score information to TSV files (`ms3 extract`).
 
 ### MEI
 
-To date, MuseScore 4 is able to convert files to MEI Basic 5.0 format. Take these files with a 
-grain of salt as we cannot guarantee congruence with the source files.
-The quality of these files makes them unsuitable for music research but they may serve as a 
-starting point for a well-curated scholarly edition.
-In the long run, provided the maturing of the relevant tools, the MEI files should take on 
-the role of being the authoritative format.
-Until then, they should not be manually modified because they are to be re-generated by conversion
-and overwritten once the authoritative MuseScore files are modified.
+To date, MuseScore 4 is able to convert files to MEI Basic 5.0 format. Take these files with a grain of salt as we cannot guarantee congruence with the source files. The quality of these files makes them unsuitable for music research but they may serve as a starting point for a well-curated scholarly edition. In the long run, provided the maturing of the relevant tools, the MEI files should take on the role of being the authoritative format. Until then, they should not be manually modified because they are to be re-generated by conversion and overwritten once the authoritative MuseScore files are modified.
 
 ### musicXML
 
-For convenience and in addition, we offer the chorales in musicXML format. However, experience
-shows that musicXML files output by MuseScore come with a number of issues and conversion errors.
-These files are unsuited for scholarly work but some users may still appreciate their availability.
+For convenience and in addition, we offer the chorales in musicXML format. However, experience shows that musicXML files output by MuseScore come with a number of issues and conversion errors. These files are unsuited for scholarly work but some users may still appreciate their availability.
 
 ### TSV files
 
-Tab-separated files are a dialect of CSV files and can be used the exact same way.
-The most convenient way of viewing them is through a spreadsheet program such as LibreOffice Calc
-(Excel, Numbers, Sheets, etc.) or a text editor with TSV support/plugin.
-Power users may want to load them in their favourite programming language or statistical software.
+Tab-separated files are a dialect of CSV files and can be used the exact same way. The most convenient way of viewing them is through a spreadsheet program such as LibreOffice Calc (Excel, Numbers, Sheets, etc.) or a text editor with TSV support/plugin. Power users may want to load them in their favourite programming language or statistical software.
 
 You can look up what any column means in the documentation of ms3: https://ms3.readthedocs.io/columns
 
-The most important TSV file is called `metadata.tsv`. It contains one row per chorale,
-and comes with a number of columns that describe the piece in numerous ways.
-A synoptic overview of the most important columns can be found 
-[here](https://dcmlab.github.io/mozart_piano_sonatas/#how-to-read-metadata-tsv).
+The most important TSV file is called `metadata.tsv`. It contains one row per chorale, and comes with a number of columns that describe the piece in numerous ways. A synoptic overview of the most important columns can be found [here](https://dcmlab.github.io/mozart_piano_sonatas/#how-to-read-metadata-tsv).
+
+### Loading TSV files in Python
+
+Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings, you may want to use this code to load any TSV files related to this repository (provided you're doing it in Python). After a quick `pip install -U ms3` (requires Python 3.10 or later) you'll be able to load any TSV like this:
+
+```python
+import ms3
+
+notes = ms3.load_tsv("notes/001_Chorale_1_Bass_1.notes.tsv")
+metadata = ms3.load_tsv("metadata.tsv")
+```
+
+Each TSV file comes with its own JSON descriptor (`*.resource.json`) that describes the meanings and datatypes of its columns ("fields"), follows the [Frictionless specification](https://specs.frictionlessdata.io/tabular-data-resource/), and can be used to validate and correctly load the described file.
+
+## Version history
+
+See the [GitHub releases](https://github.com/Chorale-Corpus/Kittel_JC/releases).
+
+## Questions, Suggestions, Corrections, Bug Reports
+
+Please [create an issue](https://github.com/Chorale-Corpus/Kittel_JC/issues) and/or feel free to fork and submit pull requests.
+
+## Cite as
+
+> Gerhardt, K., Hentschel, J., Phan, V. D., Kirsch, M., Kirsch, K., & Gotham, M. R. H. (2026). Beyond Ba(t)ch: A Multimodal Meta-Corpus of Digital Chorale Transcriptions and Related Data. Transactions of the International Society for Music Information Retrieval, 9(1), 440–455. https://doi.org/10.5334/tismir.226
+
+## License
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+
+![cc-by-nc-sa-image](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
 ## Overview
 |        file_name        |measures|labels|
